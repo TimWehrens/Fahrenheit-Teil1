@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>Celcius Fahrenheit Umrechner</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script>
+			"use strict";
+
+			function flaeche(Celsius) {
+				return Celsius * 1.8 +32;
+			}
+
+			function clicked() {
+				let Celsius = document.getElementById("idCelsius").value;
+				
+				let ausgabe = "Eine Temperatur von " + Celsius + " C° macht bin Fahrenheit: " + flaeche(Celsius) + " Grad Fahrenheit° " + Jacke(Celsius);
+				
+				document.getElementById("idAusgabe").innerHTML = ausgabe;
+			}
+
+
+            function Jacke(Celsius){
+
+            if (flaeche(Celsius)<55)  { return "Lass die Jacke zuhause"}
+            else if (flaeche(Celsius)>80){ return "Du brauchst eine Jacke"}
+            else {return ""}
+           }
+		</script>
+	</head>
+
+	<body>
+		<h1>Celcius Fahrenheit Umrechner</h1>
+		Celsius in Grad:<input id="idCelsius" type="text" value="25">
+    	<button onClick="clicked();">Berechne Fahrenheit</button><br /><br />
+		<div id="idAusgabe">Hier kommt beim Klicken auf den Button eine Ausgabe.</div>
+	</body>
+</html>
